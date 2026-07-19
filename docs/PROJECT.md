@@ -51,7 +51,16 @@ The application is designed using professional engineering standards so it can b
 
 ## Future Features
 
-To be defined.
+- Automatic brokerage synchronization where supported.
+- Mobile companion application.
+- Cloud backup with end-to-end encryption.
+- Multi-currency performance reporting.
+- Tax estimation and reporting assistance.
+- Goal-based investment tracking.
+- Portfolio rebalancing recommendations.
+- AI-powered anomaly detection.
+- Plugin marketplace.
+- Custom dashboards and widgets.
 
 ## Design Principles
 
@@ -66,20 +75,53 @@ To be defined.
 
 ## Success Metrics
 
-To be defined.
+The project will be considered successful if it:
+
+- Reliably imports brokerage statements with high accuracy.
+- Produces portfolio calculations that are fully transparent and reproducible.
+- Allows complete portfolio reconstruction from imported statements.
+- Requires minimal manual data entry.
+- Remains responsive for portfolios containing tens of thousands of transactions.
+- Provides an intuitive user experience requiring little documentation.
+- Can be extended through plugins without major architectural changes.
 
 ## Technology Stack
 
-To be defined.
+- Language: Python
+- UI Framework: PySide6 (Qt)
+- Database: SQLite
+- ORM: SQLAlchemy
+- Charts: PyQtGraph
+- Data Processing: Pandas
+- Visualization: Matplotlib (reports only)
+- Testing: Pytest
+- Packaging: PyInstaller
+- Version Control: Git + GitHub
 
 ## Project Scope
 
-To be defined.
+This project focuses on creating a professional desktop portfolio management application capable of importing brokerage statements, storing investment history, analyzing portfolio performance, generating reports, and providing insightful analytics.
+
+The application intentionally excludes brokerage integration for trade execution, financial advice, and cloud-first functionality.
 
 ## Release Strategy
 
-To be defined.
+Development will follow an iterative milestone-based approach.
+
+Each milestone will include documentation updates, implementation, testing, and review before progressing to the next phase.
+
+Major features will only be merged after passing automated tests and manual validation.
 
 ## Glossary
 
-To be defined.
+Broker Statement — A document provided by a brokerage containing account activity.
+
+TWR — Time-Weighted Return.
+
+XIRR — Extended Internal Rate of Return.
+
+CAGR — Compound Annual Growth Rate.
+
+Plugin — A modular extension that adds functionality without modifying the core application.
+
+Offline-first — The application functions completely without an internet connection for core features.
