@@ -292,8 +292,31 @@ Automated tests should be preferred wherever practical.
 
 ## Deployment Architecture
 
-To be defined.
+Portfolio Tracker is distributed as a standalone desktop application.
+
+Deployment principles:
+
+- The application should run entirely on the user's local machine.
+- Package releases using PyInstaller for Windows, with future support for macOS and Linux.
+- Bundle all required dependencies within the installer where practical.
+- Store user data separately from application binaries to simplify upgrades.
+- Support automatic migration of the database schema between compatible versions.
+- Configuration and user data must persist across application updates.
+- Ensure installation and updates are simple for non-technical users.
 
 ## Future Architectural Evolution
 
-To be defined.
+The architecture is intentionally designed to support future enhancements without requiring major redesign.
+
+Potential future capabilities include:
+
+- Optional cloud synchronization while preserving offline-first behavior.
+- Mobile companion applications.
+- Additional brokerage integrations.
+- Advanced analytics and reporting modules.
+- Multi-user support.
+- Portfolio sharing and collaboration.
+- Enhanced AI capabilities.
+- Expanded plugin ecosystem.
+
+Future enhancements should build upon the existing layered architecture and maintain backward compatibility whenever practical.
