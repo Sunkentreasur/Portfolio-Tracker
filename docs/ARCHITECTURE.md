@@ -211,27 +211,84 @@ Configuration should be validated during application startup and exposed through
 
 ## Logging Strategy
 
-To be defined.
+Portfolio Tracker uses structured logging to provide clear diagnostics while avoiding unnecessary verbosity.
+
+Logging levels:
+
+- DEBUG – Detailed diagnostic information for development.
+- INFO – Normal application events.
+- WARNING – Recoverable issues.
+- ERROR – Operation failures.
+- CRITICAL – Severe failures that may prevent normal operation.
+
+Business logic should log meaningful events without exposing sensitive user data.
 
 ## Error Handling Philosophy
 
-To be defined.
+Errors should be handled as close to their source as practical while providing meaningful feedback to the user.
+
+Principles:
+
+- Never silently ignore errors.
+- Display user-friendly error messages.
+- Log detailed technical information for debugging.
+- Recover gracefully whenever possible.
+- Prevent partial or inconsistent database updates using transactions.
 
 ## Performance Considerations
 
-To be defined.
+The architecture is designed to remain responsive for large investment portfolios.
+
+Performance principles:
+
+- Lazy-load data where appropriate.
+- Avoid unnecessary database queries.
+- Cache expensive calculations when safe.
+- Perform long-running tasks asynchronously.
+- Keep the UI responsive during imports and analytics.
+- Optimize for portfolios containing tens of thousands of transactions.
 
 ## Security Model
 
-To be defined.
+Portfolio Tracker is designed as an offline-first desktop application where user data remains under the user's control.
+
+Security principles:
+
+- All portfolio data is stored locally by default.
+- No financial data is transmitted externally unless the user explicitly enables an integration.
+- Secrets such as API keys must never be hardcoded and should be stored securely.
+- Input from imported files must always be validated before processing.
+- Database operations must use parameterized queries through SQLAlchemy.
+- Sensitive information should never appear in logs.
+- The application should fail securely when encountering invalid or unexpected input.
 
 ## Scalability Strategy
 
-To be defined.
+The architecture is designed to support future growth without major redesign.
+
+Scalability principles:
+
+- Maintain clear separation between presentation, application, domain, and infrastructure layers.
+- Design services to remain modular and independently testable.
+- Support additional importers, analytics modules, and plugins without modifying the core application.
+- Minimize coupling between components.
+- Optimize database access to support very large transaction histories.
+- Ensure future cloud synchronization can be introduced without impacting offline functionality.
 
 ## Testing Strategy
 
-To be defined.
+Testing is an essential part of development and should accompany every major feature.
+
+Testing includes:
+
+- Unit tests for business logic.
+- Integration tests for database operations.
+- Import validation tests using sample brokerage statements.
+- Analytics verification using known reference portfolios.
+- UI testing for critical workflows.
+- Regression testing before releases.
+
+Automated tests should be preferred wherever practical.
 
 ## Deployment Architecture
 
